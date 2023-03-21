@@ -28,15 +28,21 @@ router.post("/", async (req, res) => {
 
 
 router.put("/:id", (req, res) => {
+  console.log("")
+ const db = await database()
   res.send("# Alterar todos os dados de uma tarefa")
 })
 
 router.patch("/:id", (req, res) => {
-  res.send("# Alterar dados específicos de uma tarefa")
+  console.log("VALUE UPDATED")
+  const db = await database()
+  res.send("UPDATE ")
 })
 
 router.delete("/:id", (req, res) => { 
-  res.send("# Excluir uma tarefa")
+ console.log("ITEM DELETED")
+ const db = await database()
+ const result = await db.run("DELETE FROM todo WHERE id=?"
 })
 
 export default router
